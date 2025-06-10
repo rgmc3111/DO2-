@@ -167,7 +167,8 @@ h1 {
     }
 
     .input-row input[type="number"] {
-        width: 100%;
+        width: 150px; /* 入力ボックスの幅を固定 */
+        margin: 0 auto; /* 中央寄せ */
         flex: none;
     }
 
