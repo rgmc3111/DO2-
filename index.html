@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DO2計算ツール</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>DO2 計算</h1>
+    <div class="input-form">
+        <div class="input-row"> <label for="bsa">体表面積 (m²):</label>
+            <input type="number" id="bsa" name="bsa" step="0.1" min="0">
+        </div>
+        <div class="input-row"> <label for="hematocrit">ヘマトクリット値 (%):</label>
+            <input type="number" id="hematocrit" name="hematocrit" min="0">
+        </div>
+        <div class="input-row"> <label for="spo2">酸素飽和度 (SaO2, %):</label>
+            <input type="number" id="spo2" name="spo2" max="100" min="0">
+        </div>
+        <p class="error-message" id="spo2-error"></p> 
+
+        <div class="input-row"> <label for="pao2">動脈血酸素分圧 (PaO2, mmHg):</label>
+            <input type="number" id="pao2" name="pao2" min="0">
+        </div>
+        <div class="input-row"> <label for="flow">灌流量 (L/min):</label>
+            <input type="number" id="flow" name="flow" min="0" step="0.1">
+        </div>
+        <button onclick="calculateDO2()">計算</button>
+    </div>
+    <div class="result">
+        <h2>DO2i</h2>
+        <p id="do2-result"></p> 
+        <p class="do2-unit-text">ml/min/m²</p>
+        <div class="additional-info-container">
+            <p class="additional-info-item">34℃: 280ml/min/m2</p>
+            <p class="additional-info-item">32℃: 270ml/min/m2</p>
+            <p class="additional-info-item">30℃: 260ml/min/m2</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
